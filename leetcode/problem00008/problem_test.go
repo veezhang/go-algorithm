@@ -7,7 +7,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_TwoSum(t *testing.T) {
+func Test_MyAtoi(t *testing.T) {
 	funs := map[string]func(str string) int{
 		"myAtoiNormal": myAtoiNormal,
 		"myAtoiDFA":    myAtoiDFA,

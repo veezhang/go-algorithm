@@ -7,7 +7,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_TwoSum(t *testing.T) {
+func Test_Reverse(t *testing.T) {
 	funs := map[string]func(x int) int{
 		"reverse": reverse,
 	}
