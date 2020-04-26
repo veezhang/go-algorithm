@@ -35,7 +35,6 @@ Explanation: The first non-whitespace character is '-', which is the minus sign.
 
 Example 3:
 
-
 ```c
 Input: "4193 with words"
 Output: 4193
@@ -47,7 +46,7 @@ Example 4:
 ```c
 Input: "words and 987"
 Output: 0
-Explanation: The first non-whitespace character is 'w', which is not a numerical 
+Explanation: The first non-whitespace character is 'w', which is not a numerical
              digit or a +/- sign. Therefore no valid conversion could be performed.
 ```
 

@@ -22,4 +22,4 @@ return [0, 1].
 ## 解题思路
 
 给定数 n, 目标是target，那么另一个数就是target - n
-用一个map映射起来，如果存在map[target - n]，则找到了，否则存入map[n]=n的下标
+用一个map映射起来，如果存在map[target - n]，则找到了，否则存入map[n]=i的下标
