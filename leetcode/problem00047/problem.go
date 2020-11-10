@@ -43,31 +43,3 @@ func permuteUnique(nums []int) [][]int {
 
 	return result
 }
-
-func permute2(nums []int) [][]int {
-	// nFill 表示已经填充的个数
-	var backtrack func(pathNums []int, nFill, length int, result *[][]int)
-	backtrack = func(pathNums []int, nFill, length int, result *[][]int) {
-		// 满足条件，加入到结果队列
-		if nFill == length {
-			cpy := make([]int, len(pathNums))
-			copy(cpy, pathNums)
-			*result = append(*result, cpy)
-			return
-		}
-
-		// for 选择 in 选择列表
-		for i := nFill; i < length; i++ {
-			// 做选择
-			pathNums[nFill], pathNums[i] = pathNums[i], pathNums[nFill]
-			// backtrack(路径，选择列表)
-			backtrack(pathNums, nFill+1, length, result)
-			// 撤销选择
-			pathNums[nFill], pathNums[i] = pathNums[i], pathNums[nFill]
-		}
-	}
-	result := make([][]int, 0)
-	backtrack(nums, 0, len(nums), &result)
-
-	return result
-}
