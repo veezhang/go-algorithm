@@ -1,7 +1,7 @@
 package problem00147
 
 import (
-	"github/veezhang/go-algorithm/leetcode/common/list"
+	. "github/veezhang/go-algorithm/leetcode/common/list"
 )
 
 /**
@@ -11,12 +11,12 @@ import (
  *     Next *ListNode
  * }
  */
-func insertionSortList(head *list.ListNode) *list.ListNode {
+func insertionSortList(head *ListNode) *ListNode {
 	if nil == head || nil == head.Next {
 		return head
 	}
 	// 最前面搞一个头节点，方便插入
-	head = &list.ListNode{
+	head = &ListNode{
 		// Val:  math.MinInt64,
 		Next: head,
 	}

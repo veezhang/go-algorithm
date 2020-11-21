@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github/veezhang/go-algorithm/leetcode/common/list"
+	. "github/veezhang/go-algorithm/leetcode/common/list"
 
 	"github.com/google/go-cmp/cmp"
 )
 
 func Test_insertionSortList(t *testing.T) {
-	funs := map[string]func(head *list.ListNode) *list.ListNode{
+	funs := map[string]func(head *ListNode) *ListNode{
 		"insertionSortList": insertionSortList,
 	}
 
@@ -48,7 +48,7 @@ func Test_insertionSortList(t *testing.T) {
 		for name, tt := range tests {
 			runnme := fmt.Sprintf("[%s]%s", fname, name)
 			t.Run(runnme, func(t *testing.T) {
-				got := fun(list.NewListFromSlice(tt.head))
+				got := fun(NewListFromSlice(tt.head))
 				want := tt.want
 				diff := cmp.Diff(got.Slice(), want)
 				if diff != "" {
