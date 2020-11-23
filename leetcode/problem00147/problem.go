@@ -17,7 +17,6 @@ func insertionSortList(head *ListNode) *ListNode {
 	}
 	// 最前面搞一个头节点，方便插入
 	head = &ListNode{
-		// Val:  math.MinInt64,
 		Next: head,
 	}
 
