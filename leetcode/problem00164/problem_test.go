@@ -10,8 +10,8 @@ import (
 
 func Test_maximumGap(t *testing.T) {
 	funs := map[string]func([]int) int{
-		// "maximumGap1": maximumGap1,
-		// "maximumGap2": maximumGap2,
+		"maximumGap1": maximumGap1,
+		"maximumGap2": maximumGap2,
 		"maximumGap3": maximumGap3,
 	}
 
