@@ -1,4 +1,4 @@
-package problem00062
+package problem00860
 
 import (
 	"fmt"
@@ -7,36 +7,34 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func Test_uniquePaths(t *testing.T) {
-	funs := map[string]func(m int, n int) int{
-		"uniquePaths1": uniquePaths1,
-		"uniquePaths2": uniquePaths2,
+func Test_lemonadeChange(t *testing.T) {
+	funs := map[string]func([]int) bool{
+		"lemonadeChange": lemonadeChange,
 	}
 
 	tests := map[string]struct {
-		m    int
-		n    int
-		want int
+		bills []int
+		want  bool
 	}{
 		"normal1": {
-			m:    3,
-			n:    7,
-			want: 28,
+			bills: []int{5, 5, 5, 10, 20},
+			want:  true,
 		},
 		"normal2": {
-			m:    3,
-			n:    2,
-			want: 3,
+			bills: []int{5, 5, 10},
+			want:  true,
 		},
 		"normal3": {
-			m:    7,
-			n:    3,
-			want: 28,
+			bills: []int{10, 10},
+			want:  false,
 		},
 		"normal4": {
-			m:    3,
-			n:    3,
-			want: 6,
+			bills: []int{5, 5, 10, 10, 20},
+			want:  false,
+		},
+		"normal5": {
+			bills: []int{},
+			want:  true,
 		},
 	}
 
@@ -44,7 +42,7 @@ func Test_uniquePaths(t *testing.T) {
 		for name, tt := range tests {
 			runnme := fmt.Sprintf("[%s]%s", fname, name)
 			t.Run(runnme, func(t *testing.T) {
-				got := fun(tt.m, tt.n)
+				got := fun(tt.bills)
 				want := tt.want
 				diff := cmp.Diff(got, want)
 				if diff != "" {
