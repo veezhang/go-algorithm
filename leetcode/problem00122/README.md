@@ -71,7 +71,6 @@
 
 上面状态方程中，dp[i][0]，dp[i][1] 只是 依赖 dp[i−1][0] 和 dp[i−1][1]
 
-
 定义状态:
 
 * `dp0` 表示第 `i` 天交易完后手里没有股票的最大利润
@@ -79,13 +78,13 @@
 
 初始状态：
 
-* dp[0][0] = 0
-* dp[0][1] = -prices[0]
+* dp0 = 0
+* dp1 = -prices[0]
 
 转移方程：
 
-* dp[i][0]=max(dp[i−1][0],dp[i−1][1]+prices[i])
-* dp[i][1]=max(dp[i−1][1],dp[i−1][0]−prices[i])
+* dp0=max(dp0,dp1+prices[i])
+* dp1=max(dp1,dp0−prices[i])
 
 ### 单调栈
 
